@@ -22,8 +22,8 @@ const Store = _.extend(Backbone.Events, {
 		this._data = _.extend(this._data, dataObj)
 		this._emitChange()
 	},
-	_initialize() {
-
+	_initialize(newData) {
+		this._getDataProp('blogRoll').on('update sync', () => this._emitChange())
 	}
 })
 

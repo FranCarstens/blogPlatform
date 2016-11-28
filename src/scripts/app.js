@@ -33,10 +33,6 @@ const app = function() {
 			console.log('handleBlogs checking in')
 			ReactDOM.render(<BlogRoll username={username}/>, document.querySelector('.body_container'))
 		},
-		handleBlogs(username) {
-			console.log('handleBlogs checking in')
-			ReactDOM.render(<BlogRoll username={username}/>, document.querySelector('.body_container'))
-		},
 		handlePost(username, postid) {
 			console.log('handlePost checking in')
 			ReactDOM.render(<Blog username={username} postid={postid} />, document.querySelector('.body_container'))

@@ -40,7 +40,7 @@ const BlogPost = React.createClass({
 		return (
 			<article>
 				<h3><a href={`#blogs/${author}/${id}`}>{title}</a></h3>
-				<div className="byline"><span className="author">{author}</span><br/><span className="date">{date}</span></div>
+				<div className="byline"><a href={`#blogs/${author}`} className="author">{author}</a><br/><span className="date">{date}</span></div>
 				<div className="post_body" dangerouslySetInnerHTML={body}></div>
 				<div className="tags"><ul>{tags.map(this._arrayToList)}</ul></div>
 				<div className="actions_wrapper">
