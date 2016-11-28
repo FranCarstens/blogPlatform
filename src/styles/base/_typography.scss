@@ -1,0 +1,53 @@
+// IMPORT FONTS
+
+// BASE TYPOGRAPHY
+
+
+body {
+	font-family: $body;
+	font-weight: 300;
+	color: $text;
+	line-height:1.3;
+}
+
+// HEADINGS
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+h2, h3 {
+	font-size: 1rem;
+	text-transform: uppercase;
+}
+h1 {
+	font-family: Helvetica, Arial, Sans-Serif;
+	color: $orange;
+	font-size: 3rem;
+	line-height: 1.25rem;
+	text-transform: uppercase;
+}
+h1 span {
+	font-family: Georgia, 'Times New Roman, Serif';
+	font-size: 1.25rem;
+	font-weight: 300;
+	color: $text;
+	text-transform: uppercase;
+}
+h2 {
+
+}
+h3 {
+	font-family: Helvetica, Arial, Sans-Serif;
+	color: $orange;
+}
+p {
+	
+}
+a, a:link, a:hover, a:visited {
+	text-decoration: none;
+	color: $text;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	color: lighten($text, 50)
+}
