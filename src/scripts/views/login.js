@@ -13,14 +13,15 @@ import User from '../models/userModel'
 
 
 // ### PRIMARY COMPONENTS
-
 const Login = React.createClass({
 	render() {
 		return(
 			<div>
 				<Header />
-				<RegisterForm />
-				<LoginForm />
+				<section className="user_actions clearfix">
+					<RegisterForm />
+					<LoginForm />
+				</section>
 				<Footer />
 			</div>
 		)

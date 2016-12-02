@@ -24,9 +24,17 @@ const LoginForm = React.createClass({
 			<div className="login_form">
 				<form onSubmit={this._userLogin}>
 					<h3>Login</h3>
-					<input name="email" type="email" className="email" />
-					<input name="password" type="password" className="password" />
-					<button type="submit" className="button_primary">Login</button>
+					<div className="email-wrapper">
+						<input name="email" type="email" className="email" />
+						<label htmlFor="email">email</label>
+					</div>
+					<div className="password-wrapper">
+						<input name="password" type="password" className="password" />
+						<label htmlFor="password">password</label>
+					</div>
+					<div className="actions_wrapper">
+						<button type="submit" className="button_primary">Login</button>
+					</div>
 				</form>
 			</div>
 		)

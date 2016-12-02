@@ -22,14 +22,25 @@ const RegisterForm = React.createClass({
 	},
 	render() {
 		return (
-			<div className="login_form">
+			<div className="register_form">
 				<form onSubmit={this._userRegister}>
 					<h3>Register</h3>
 					<p>Join us, blog your heart out!</p>
-					<input name="username" type="text" className="username" />
-					<input name="email" type="email" className="email" />
-					<input name="password" type="password" className="password" />
-					<button type="submit" className="button_primary">Register</button>
+					<div className="username-wrapper">
+						<input name="username" type="text" className="username" />
+						<label htmlFor="username">choose a username</label>
+					</div>
+					<div className="email-wrapper">
+						<input name="email" type="email" className="email" />
+						<label htmlFor="email">email</label>
+					</div>
+					<div className="password-wrapper">
+						<input name="password" type="password" className="password" />
+						<label htmlFor="password">password</label>
+					</div>
+					<div className="actions_wrapper">
+						<button type="submit" className="button_primary">Register</button>
+					</div>
 				</form>
 			</div>
 		)

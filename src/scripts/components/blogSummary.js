@@ -10,7 +10,7 @@ import Actions from '../actions'
 
 // ### PRIMARY COMPONENTS
 
-const BlogPost = React.createClass({
+const BlogSummary = React.createClass({
 	_arrayToList(str, i) {
 		return Actions.arrayToList(str, i)
 	},
@@ -25,12 +25,12 @@ const BlogPost = React.createClass({
 		e.preventDefault()
 		Actions.deletePost(this.props.model.cid)
 	},
-	_htmlMaker(markup) {
-		return Actions.htmlMaker(markup)
+	_htmlSummary(markup) {
+		return Actions.htmlSummary(markup)
 	},
 	render() {
 		let title = this.props.model.get('title'),
-			body = this._htmlMaker(this.props.model.get('body')),
+			body = this._htmlSummary(this.props.model.get('body')),
 			tags = this.props.model.get('tags'),
 			author = this.props.model.get('username'),
 			date = this._fancifyDate(this.props.model.get('createdAt')),
@@ -39,18 +39,12 @@ const BlogPost = React.createClass({
 		return (
 			<article>
 				<h3><a href={`#blogs/${author}/${id}`}>{title}</a></h3>
-				<div className="byline"><a href={`#blogs/${author}`} className="author">{author}</a><br/><span className="date">{date}</span></div>
+				<div className="byline"><a href={`#blogs/${author}`} className="author">{author}</a> @ <span className="date">{date}</span></div>
 				<div className="post_body" dangerouslySetInnerHTML={body}></div>
 				<div className="tags"><ul>{tags.map(this._arrayToList)}</ul></div>
-				<div className="actions_wrapper">
-					<ul>
-						<li><a href="" onClick={this._editPost}>Edit</a></li>
-						<li><a href="" onClick={this._deletePost}>Delete</a></li>
-					</ul>
-				</div>	
 			</article>
 		)
 	}
 })
 
-export default BlogPost
+export default BlogSummary

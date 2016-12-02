@@ -1,0 +1,21 @@
+.tags {
+	margin: 0.5rem 0;
+	font-size: 0.83rem;
+	li {
+		display: inline-block;
+		a {
+			display: block;
+			height: 1.5rem;
+			line-height: 1.5rem;
+			margin: 1rem 0.5rem 0 0;
+			padding: 0rem 0.75rem;
+			background-color: $borders;
+			border-radius: 0.75rem;
+			color: lighten($text, 30);
+			&:hover {
+				background-color: $green;
+				color: #FFF;
+			}
+		}
+	}
+}

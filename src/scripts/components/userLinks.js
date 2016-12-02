@@ -23,6 +23,7 @@ const UserLinks = React.createClass({
 					<li className="anon_user"><a href="#login">Register</a></li>
 					<li className="anon_user"><a href="#login">Login</a></li>
 					<li className="reg_user"><a href="#create">Create New</a></li>
+					<li className="reg_user"><a href="#user/blog">My Blog</a></li>
 					<li className="reg_user"><a href="." onClick={this._logoutUser} >Logout</a></li>
 				</ul>
 			</nav>

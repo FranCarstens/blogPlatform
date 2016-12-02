@@ -6,14 +6,13 @@ import Actions from '../actions'
 // ### COMPONENTS & VARIABLES
 import Header from '../components/header'
 import Footer from '../components/footer'
-import BlogPost from '../components/blogPost'
+import BlogRoll from '../components/blogRoll'
 
 
 // ### PRIMARY COMPONENTS
-const Blog = React.createClass({
+const UserBlogs = React.createClass({
 	componentWillMount() {
-		let id = this.props.postid
-		Actions.fetchBlogPost(id)
+		Actions.fetchSpecifiedUserBlogPosts(this.props.username)
 		Store.on('dataChanged', () => {
 			this.setState(
 				Store._getData()
@@ -27,15 +26,12 @@ const Blog = React.createClass({
 		return Store._getData()
 	},
 	render() {
-		var model = this.state.blogPost
-		return(
-			<div className="body_wrapper">
-				<Header />
-				<BlogPost id={this.props.postid} model={this.state} />
-				<Footer />
+		return (
+			<div>
+				<BlogRoll collection={ this.state.blogRoll } />
 			</div>
 		)
 	}
 })
 
-export default Blog
+export default UserBlogs

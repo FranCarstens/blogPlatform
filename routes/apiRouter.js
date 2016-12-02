@@ -78,7 +78,7 @@ apiRouter
 		})
 	})
 	.get('/blog/:_id', function(req,res) {
-		Blog.findById(req.query, function(err, record) {
+		Blog.findById(req.params._id, function(err, record) {
 			if (err) {
 				res.status(400).send(err)
 			}

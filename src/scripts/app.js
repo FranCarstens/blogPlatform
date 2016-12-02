@@ -7,7 +7,9 @@ import init from './init'
 
 // ### COMPONENTS & VARIABLES
 
-import BlogRoll from './views/blogRoll.js'
+import AllBlogs from './views/allBlogs.js'
+import UserBlogs from './views/userBlogs.js'
+import MyBlog from './views/myBlogs.js'
 import Blog from './views/blog.js'
 import Login from './views/login.js'
 import Create from './views/create.js'
@@ -18,20 +20,24 @@ const app = function() {
 	const Controller = Backbone.Router.extend({
 		routes: {
 			'home' : 'handleHome',
-			'blogs/:username' : 'handleBlogs',
-			'blogs/myblogs' : 'handleMyBlogs',
+			'blogs/:username' : 'handleUserBlogs',
 			'blogs/:username/:postid' : 'handlePost',
+			'user/blog' : 'handleMyBlogs',
 			'login' : 'handleLogin',
 			'create' : 'handleCreate',
 			'*default' : 'handleDefault'
 		},
 		handleHome() {
 			console.log('handleHome checking in')
-			ReactDOM.render(<BlogRoll />, document.querySelector('.body_container'))
+			ReactDOM.render(<AllBlogs />, document.querySelector('.body_container'))
 		},
-		handleBlogs(username) {
-			console.log('handleBlogs checking in')
-			ReactDOM.render(<BlogRoll username={username}/>, document.querySelector('.body_container'))
+		handleUserBlogs(username) {
+			console.log('handleUserBlogs checking in')
+			ReactDOM.render(<UserBlogs username={username} />, document.querySelector('.body_container'))
+		},
+		handleMyBlogs() {
+			console.log('handleMyBlogs checking in')
+			ReactDOM.render(<MyBlog />, document.querySelector('.body_container'))
 		},
 		handlePost(username, postid) {
 			console.log('handlePost checking in')

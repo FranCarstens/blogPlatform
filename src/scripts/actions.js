@@ -130,10 +130,15 @@ const Actions = {
 		return <li key={i}><a href="#blogs/tag/str">{str}</a></li>
 	},
 	formatMarkup(markup) {
-		return markup.replace(/[\n\r]/g, '<br>')
+		console.log('some markup',markup)
+		return markup.replace(/[\n\r]/g, '<br />')
 	},
 	htmlMaker(markup) {
 		return {__html: this.formatMarkup(markup)}
+	},
+	htmlSummary(markup) {
+		let summary1 = this.formatMarkup(markup).split('<br />')
+		return this.htmlMaker(summary1[0])
 	},
 	fancifyDate(dateStr) {
 		var date = new Date(dateStr)

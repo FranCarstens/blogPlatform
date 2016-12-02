@@ -1,0 +1,33 @@
+section.user_actions {
+	width: 768px;
+	margin: 4rem auto;
+}
+div.register_form, div.login_form {
+	float:left;
+	width: 50%;
+	padding: 0 2rem;
+}
+div.register_form {
+	border-right: 3px solid $borders;
+}
+form {
+	[class*="-wrapper"] {
+		position: relative;
+		margin: 1rem 0;
+		label {
+			position:absolute;
+			right: 1.15rem;
+			line-height: 2.5rem;
+			color: lighten($text, 50);
+		}
+		input:active, input:focus, input:hover {
+			& ~ label {
+				position: absolute;
+				right: 1.15rem;
+				line-height: 1.5;
+				font-size: 0.7rem;
+				color: $yellow;
+			}
+		}
+	}
+}
