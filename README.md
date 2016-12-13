@@ -12,7 +12,7 @@ Blog Platform started as a weekend assignment for *The Iron Yard*. This project 
 
 * Improve and complete styling.
 * Add loading states.
-* Add plog post view.
+* Add blog post view.
 * Add discover functionality.
 * Add comments.
 
